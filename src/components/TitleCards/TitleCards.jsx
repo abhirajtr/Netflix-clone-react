@@ -1,7 +1,7 @@
 import './TitleCards.css'
-import cards_data from '../../assets/cards/Cards_data';
 import { useRef, useState } from 'react';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 
 const TitleCards = ({ title, url }) => {
@@ -21,7 +21,7 @@ const TitleCards = ({ title, url }) => {
   useEffect(() => {
     // // const URL = `https://api.themoviedb.org/3/${category ? category : "movie/now_playing"}+?language=en-US&page=1`
     // const URL = `https://api.themoviedb.org/3/${category? category: "movie/now_playing"}?language=en-US&page=1`;
-    fetch(url+"?language=en-US&page=1", options)
+    fetch(url + "?language=en-US&page=1", options)
       .then(response => response.json())
       .then(response => setApiData(response.results))
       .catch(err => console.error(err));
@@ -33,10 +33,10 @@ const TitleCards = ({ title, url }) => {
       <h2>{title ? title : "Polpular on Netflix"}</h2>
       <div className="card-list" ref={cardsRef}>
         {apiData.map((card, index) => {
-          return <div className='card' key={index}>
+          return <Link to={`/player/${card.id}`} className='card' key={index}>
             <img src={`https://image.tmdb.org/t/p/w500` + card.backdrop_path} alt="" />
             <p>{card?.original_title}</p>
-          </div>
+          </Link>
         })}
       </div>
     </div>
