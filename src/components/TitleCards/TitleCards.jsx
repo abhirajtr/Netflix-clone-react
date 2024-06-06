@@ -27,7 +27,6 @@ const TitleCards = ({ title, url }) => {
       .catch(err => console.error(err));
     cardsRef.current.addEventListener('wheel', handleWheel)
   }, [])
-  console.log(apiData);
   return (
     <div className='titlecards'>
       <h2>{title ? title : "Polpular on Netflix"}</h2>
