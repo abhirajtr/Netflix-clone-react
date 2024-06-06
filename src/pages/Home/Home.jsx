@@ -15,13 +15,15 @@ const Home = () => {
         <img src={hero_banner} alt="" className='banner-img' />
         <div className="hero-caption">
           <img src={hero_title} alt="" className='caption-img' />
-          <p>Experience the best of entertainment with our exclusive collection of movies, TV shows, 
+          <p>Experience the best of entertainment with our exclusive collection of movies, TV shows,
             and originals. Stream now and dive into a world of endless excitement.</p>
           <div className="hero-btns">
             <button className='btn'><img src={play_icon} alt="" />Play</button>
             <button className='btn dark-btn'><img src={info_icon} alt="" />More Info</button>
           </div>
-          <TitleCards title={"Trending"} url={"https://api.themoviedb.org/3/trending/movie/day"} />
+          <div className="title-cards">
+            <TitleCards title={"Trending"} url={"https://api.themoviedb.org/3/trending/movie/day"} />
+          </div>
         </div>
       </div>
       <div className="more-cards">
