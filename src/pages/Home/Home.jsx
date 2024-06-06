@@ -15,20 +15,20 @@ const Home = () => {
         <img src={hero_banner} alt="" className='banner-img' />
         <div className="hero-caption">
           <img src={hero_title} alt="" className='caption-img' />
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Error harum delectus facilis non illum tenetur totam dicta hic commodi modi.</p>
-            <div className="hero-btns">
-              <button className='btn'><img src={play_icon} alt="" />Play</button>
-              <button className='btn dark-btn'><img src={info_icon} alt="" />More Info</button>
-            </div>
-            <TitleCards />
+          <p>Experience the best of entertainment with our exclusive collection of movies, TV shows, 
+            and originals. Stream now and dive into a world of endless excitement.</p>
+          <div className="hero-btns">
+            <button className='btn'><img src={play_icon} alt="" />Play</button>
+            <button className='btn dark-btn'><img src={info_icon} alt="" />More Info</button>
+          </div>
+          <TitleCards title={"Trending"} url={"https://api.themoviedb.org/3/trending/movie/day"} />
         </div>
       </div>
       <div className="more-cards">
-        <TitleCards title={"Blockbuster Movies"}/>
-        <TitleCards title={"Only on Netflix"}/>
-        <TitleCards title={"Upcoming"}/>
-        <TitleCards title={"Top picks for you"}/>
+        <TitleCards title={"Now Playing"} url={"https://api.themoviedb.org/3/movie/now_playing"} />
+        <TitleCards title={"Latest"} url={"https://api.themoviedb.org/3/movie/popular"} />
+        <TitleCards title={"Top Rated"} url={"https://api.themoviedb.org/3/movie/top_rated"} />
+        <TitleCards title={"Upcoming"} url={"https://api.themoviedb.org/3/movie/upcoming"} />
       </div>
       <Footer />
     </div>
